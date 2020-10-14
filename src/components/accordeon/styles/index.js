@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
+  justify-content:center;
   border-bottom: solid 8px #222;
 `;
 export const Item = styled.div`
@@ -39,6 +40,7 @@ export const Header = styled.div`
 `;
 export const Inner = styled.div`
   display: flex;
+  justify-content: center;
   padding: 70px 45px;
   flex-direction: column;
   max-width: 815px;
