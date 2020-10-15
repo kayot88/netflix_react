@@ -4,7 +4,7 @@ const ToggleContext = createContext();
 
 const Accordeon = ({ children, ...restProps }) => (
   <Container {...restProps}>
-    <Inner>{children}</Inner>
+    <Inner {...restProps}>{children}</Inner>
   </Container>
 );
 

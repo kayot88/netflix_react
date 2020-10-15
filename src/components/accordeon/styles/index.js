@@ -39,11 +39,13 @@ export const Header = styled.div`
   }
 `;
 export const Inner = styled.div`
+/* background-color: red; */
   display: flex;
   justify-content: center;
   padding: 70px 45px;
   flex-direction: column;
   max-width: 815px;
+  width: 100%;
   margin: auto;
 `;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Accordeon } from "../components";
 import FAQs from "../fixtures/faqs.json";
-import OptContainer from "./OptContainer";
+import OptForm from "./OptContainer";
 console.log(FAQs);
 
 const AccordeonFaqs = () => {
@@ -16,7 +16,7 @@ const AccordeonFaqs = () => {
           </Accordeon.Item>
         );
       })}
-      <OptContainer />
+      <OptForm />
     </Accordeon>
   );
 };
