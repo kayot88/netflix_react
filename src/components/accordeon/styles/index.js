@@ -2,14 +2,15 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   display: flex;
-  justify-content:center;
+  justify-content: center;
   border-bottom: solid 8px #222;
 `;
 export const Item = styled.div`
   color: white;
-  margin-bottom: 10px;
   max-width: 670px;
-
+  margin: auto;
+  /* margin-bottom: 10px; */
+  width: 100%;
   &:first-of-type {
     margin-top: 3em;
   }
@@ -18,6 +19,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+
   margin-bottom: 1px;
   font-size: 26px;
   font-weight: normal;
@@ -39,7 +41,6 @@ export const Header = styled.div`
   }
 `;
 export const Inner = styled.div`
-/* background-color: red; */
   display: flex;
   justify-content: center;
   padding: 70px 45px;
