@@ -2,14 +2,16 @@ import React from "react";
 import { HeaderComponent } from "../components";
 import logo from "../logo.svg";
 import OptContainer from "./OptContainer";
-
+import { Link } from "react-router-dom";
 
 const HeaderContainer = () => {
   return (
     <HeaderComponent>
       <HeaderComponent.Frame>
         <HeaderComponent.LogoImage to={"/signin"} src={logo} alt="Netflix" />
-        <HeaderComponent.Button>Sign In</HeaderComponent.Button>
+        <Link to={"/signin"}>
+          <HeaderComponent.Button>Sign In</HeaderComponent.Button>
+        </Link>
       </HeaderComponent.Frame>
 
       <HeaderComponent.Title>

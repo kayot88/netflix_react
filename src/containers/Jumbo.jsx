@@ -15,10 +15,12 @@ function Jumbo({ direction = "row", ...restProps }) {
               <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
             </Jumbotron.Pane>
             <Jumbotron.Pane>
-              <Jumbotron.Image
-                src={item.image}
-                alt={item.alt}
-              ></Jumbotron.Image>
+              {/* <Jumbotron.AnimationCard> */}
+                <Jumbotron.Image
+                  src={item.image}
+                  alt={item.alt}
+                ><div></div></Jumbotron.Image>
+              {/* </Jumbotron.AnimationCard> */}
             </Jumbotron.Pane>
           </Jumbotron>
         );

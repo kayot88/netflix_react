@@ -4,3 +4,4 @@ export { default as Accordeon } from "./accordeon/accordeon";
 export { default as OptForm } from "./optForm/optForm";
 export { default as HeaderComponent } from "./header/header";
 export { default as Form } from "./form/form";
+export { default as Wrapper } from "./wrapper/wrapper";

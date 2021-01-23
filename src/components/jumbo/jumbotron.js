@@ -7,6 +7,7 @@ import {
   Pane,
   SubTitle,
   Title,
+  AnimationCard,
 } from "./styles/jumbotron";
 
 export const Jumbotron = ({ children, direction = "row", ...restProps }) => {
@@ -29,8 +30,23 @@ Jumbotron.Title = ({ children, ...restProps }) => {
 Jumbotron.SubTitle = ({ children, ...restProps }) => {
   return <SubTitle {...restProps}>{children}</SubTitle>;
 };
-Jumbotron.Image = ({ ...restProps }) => {
-  return <Image {...restProps} />;
+Jumbotron.AnimationCard = ({ children, ...restProps }) => {
+  return <AnimationCard {...restProps}>{children}</AnimationCard>;
+};
+Jumbotron.Image = ({ children, ...restProps }) => {
+  return (
+    <div>
+      <Image {...restProps} />
+      <div>
+        <video autoPlay playsInline loop muted style={{ objectFit: "contain" }}>
+          <source
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+  );
 };
 
 export default Jumbotron;

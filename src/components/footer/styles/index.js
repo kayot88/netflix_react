@@ -1,18 +1,35 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  min-width: 190px;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 1em;
+  color: #757575;
+  position: relative;
+  margin-top: 0;
+  /* display: flex;
   flex-direction: column;
   padding: 70px 56px;
   max-width: 1000px;
   margin: auto;
   border-bottom: 2px solid white;
-  margin-top: 10px;
-
-  @media (max-width: 1000px) {
+  margin-top: 10px; */
+  direction: ltr;
+  @media only screen and (max-width: 740px) {
+    background-color: #000;
+    color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  }
+  /* background: #f3f3f3; */
+  @media only screen and (min-width: 740px) {
+    background-color: #000;
+    color: #fff;
+  }
+  /* @media (max-width: 1000px) {
     padding: 70px 38px;
     border-bottom: 2px solid #222;
-  }
+  } */
 `;
 
 export const Row = styled.div`

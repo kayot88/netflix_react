@@ -14,10 +14,26 @@ export const Inner = styled.div`
 `;
 
 export const Item = styled.div`
-  border-bottom: 2px solid #222;
+  border-top: 8px solid #222;
   padding: 50px 5%;
   color: white;
   overflow: hidden;
+  position: relative;
+  &::nth-last-child() {
+    border-bottom: 8px solid #222;
+    position: relative;
+  }
+`;
+
+export const AnimationCard = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 63%;
+  max-height: 47%;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Container = styled.div`
@@ -30,10 +46,12 @@ export const Container = styled.div`
 
 export const Pane = styled.div`
   width: 50%;
-  :nth-child(2n) {
+  &:nth-child(2n) {
     display: flex;
     justify-content: center;
+    /* position: relative; */
   }
+
   @media (max-width: 1000px) {
     width: 100%;
     padding: 0 45px;
@@ -68,6 +86,11 @@ export const SubTitle = styled.h2`
 export const Image = styled.img`
   max-width: 100%;
   height: auto;
+  border: 0;
+  z-index: 2;
+  &:nth-last-child() {
+    position: relative;
+  }
 
   @media (max-width: 1000px) {
   }
