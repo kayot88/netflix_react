@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HeaderComponent } from "../components";
 import logo from "../logo.svg";
 import OptContainer from "./OptContainer";
 import { Link } from "react-router-dom";
+import { FirebaseContext } from "../context/firebase";
 
 const HeaderContainer = () => {
+  const {firebase} = useContext(FirebaseContext);
+  
   return (
     <HeaderComponent>
       <HeaderComponent.Frame>
         <HeaderComponent.LogoImage to={"/signin"} src={logo} alt="Netflix" />
-        <Link to={"/signin"}>
+        <Link to="/signin">
           <HeaderComponent.Button>Sign In</HeaderComponent.Button>
         </Link>
       </HeaderComponent.Frame>

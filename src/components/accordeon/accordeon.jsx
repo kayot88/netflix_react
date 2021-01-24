@@ -25,7 +25,6 @@ Accordeon.Header = function AccordeonHeader({ children, ...restProps }) {
   return (
     <Header onClick={() => setShow((show) => !show)} {...restProps}>
       {children}
-      {/* <pre>{JSON.stringify(show, null, 2)}</pre> */}
       {show ? (
         <img src="/images/icons/close.png" alt="close" />
       ) : (

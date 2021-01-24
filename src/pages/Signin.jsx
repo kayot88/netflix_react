@@ -31,7 +31,7 @@ export const SigninPage = () => {
   return (
     <React.Fragment>
       <HeaderComponent>
-        <HeaderComponent.LogoImage />
+        <HeaderComponent.LogoImage/>
 
         <Form>
           <Form.Title>Sign In</Form.Title>

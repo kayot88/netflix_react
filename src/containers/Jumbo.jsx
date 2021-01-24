@@ -7,7 +7,6 @@ function Jumbo({ direction = "row", ...restProps }) {
   return (
     <Jumbotron.Container>
       {jumboData.map((item) => {
-        console.log(item.direction);
         return (
           <Jumbotron key={item.id} direction={item.direction}>
             <Jumbotron.Pane>
@@ -15,12 +14,10 @@ function Jumbo({ direction = "row", ...restProps }) {
               <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
             </Jumbotron.Pane>
             <Jumbotron.Pane>
-              {/* <Jumbotron.AnimationCard> */}
                 <Jumbotron.Image
                   src={item.image}
                   alt={item.alt}
                 ><div></div></Jumbotron.Image>
-              {/* </Jumbotron.AnimationCard> */}
             </Jumbotron.Pane>
           </Jumbotron>
         );
