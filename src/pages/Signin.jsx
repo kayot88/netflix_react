@@ -1,12 +1,13 @@
-import React, { useContext, useState } from "react";
-import {useHistory} from 'react-router-dom';
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Form, HeaderComponent } from "../components";
 import FooterContainer from "../containers/Footer";
 import { FirebaseContext } from "../context/firebase";
 import * as ROUTES from "../constants/routes";
 
 export const SigninPage = () => {
-  const history = useHistory();
+
+  const history = useHistory(ROUTES);
   const { firebase } = useContext(FirebaseContext);
   const [emailAddress, setEmailAddress] = useState();
   const [password, setPassword] = useState();
@@ -31,12 +32,12 @@ export const SigninPage = () => {
   return (
     <React.Fragment>
       <HeaderComponent>
-        <HeaderComponent.LogoImage/>
+        <HeaderComponent.LogoImage />
 
         <Form>
           <Form.Title>Sign In</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
-          <Form.Base onSubmit={handleSignIn}>
+          <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
               autoComplete="Email or phone number"
               placeholder="Email or phone number"

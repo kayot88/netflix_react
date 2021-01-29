@@ -1,10 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import BrowseContainer from "../containers/BrowseContainer";
+import { UseContentHook } from "../hooks/useContent";
+import { selectFilter } from "../utils/selectFilter";
 export const BrowsePage = () => {
-  console.log("BrowsePage");
-  return (
-    <div style={{color:"red"}}>
-      Hello from browse page
-    </div>
-  );
+  const { series } = UseContentHook("series");
+  const { films } = UseContentHook("films");
+  const mediaData = selectFilter(series, films);
+
+  return <BrowseContainer mediaData={mediaData} />;
 };

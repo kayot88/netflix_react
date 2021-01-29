@@ -4,21 +4,18 @@ import { Redirect, Route } from "react-router-dom";
 const IsLoggedIn = ({ user, redirectPath, children, ...rest }) => {
     console.log("IsLoggedIn is work");
 
-  // const user = {}
   return (
     <Route
       {...rest}
-      render={(props) => {
+      render={() => {
         if (!user) {
-          console.log(children);
           return children;
         }
         if (user) {
-          console.log(redirectPath);
           return <Redirect to={{ pathname: redirectPath }} />;
         }
 
-        return console.log('dont wont to render component ');;
+        return console.log('dont wont to render component');
         
       }}
     />
@@ -26,17 +23,20 @@ const IsLoggedIn = ({ user, redirectPath, children, ...rest }) => {
 };
 
 export const ProtectedRoute = ({ user, children, ...rest }) => {
-  console.log("ProtectedRoute is work");
   return (
     <Route
       {...rest}
       render={({ location }) => {
+        console.log(location);
         if (user) {
+          console.log("userrrr", user);
           return children;
         }
         if (!user) {
+          // console.log("no user");
           return (
             <Redirect to={{ pathname: "signin", state: { from: location } }} />
+            // <Redirect to='signin' />
           );
         }
         return null;
