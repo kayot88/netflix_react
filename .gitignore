@@ -10,6 +10,11 @@
 
 # production
 /build
+#images
+.jpg
+.png
+.jpeg
+
 
 # misc
 .DS_Store

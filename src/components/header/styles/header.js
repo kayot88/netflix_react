@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Background = styled.div`
@@ -6,6 +6,11 @@ export const Background = styled.div`
   flex-direction: column;
   background: url(${(props) => (props.src ? `../images/misc/${props.src}.jpg` : '../images/misc/home-bg.jpg')}) top left /
     cover no-repeat;
+@media (max-width: 600px){
+  background: none;
+
+}
+
 `;
 
 export const Container = styled.div`
@@ -16,6 +21,11 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const Group = styled.div`
+display: flex;
+align-items:center
+`
 
 export const Link = styled.p`
   color: #fff;
@@ -33,32 +43,6 @@ export const Link = styled.p`
   }
 `;
 
-export const Group = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const SearchInput = styled.input`
-  background-color: transparent;
-  border: 1px solid white;
-  transition: width 0.5s;
-  height: 30px;
-  font-size: 14px;
-  margin-left: ${(props) => (props.active === true ? '10px' : '0')};
-  padding: ${(props) => (props.active === true ? '0 10px' : '0')};
-  opacity: ${(props) => (props.active === true ? '1' : '0')};
-  width: ${(props) => (props.active === true ? '200px' : '0px')};
-`;
-
-export const Search = styled.div`
-  display: flex;
-  align-items: center;
-
-  svg {
-    color: white;
-    cursor: pointer;
-  }
-`;
 
 export const ButtonLink = styled(ReachRouterLink)`
   display: block;
@@ -88,33 +72,6 @@ export const Picture = styled.button`
   cursor: pointer;
 `;
 
-export const Dropdown = styled.div`
-  display: none;
-  position: absolute;
-  background-color: black;
-  padding: 10px;
-  width: 100px;
-  top: 32px;
-  right: 10px;
-
-  ${Group} {
-    margin-bottom: 10px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-
-  button {
-    margin-right: 10px;
-  }
-
-  p {
-    font-size: 12px;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-`;
 
 export const Profile = styled.div`
   display: flex;
@@ -123,14 +80,7 @@ export const Profile = styled.div`
   cursor: pointer;
   position: relative;
 
-  svg {
-    color: white;
-    margin-left: 5px;
-  }
-
-  &:hover > ${Dropdown} {
-    display: flex;
-    flex-direction: column;
+  direction: column;
   }
 `;
 

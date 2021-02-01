@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bit/kayot88.neflify.footer.footer": "0.0.1",
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -16,6 +17,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "styled-components": ">=4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

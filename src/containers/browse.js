@@ -3,7 +3,8 @@ import { Card, Header, Loading } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 import { FirebaseContext } from '../context/firebase';
-import { SelectProfileContainer, FooterContainer } from '.';
+import { SelectProfileContainer } from '.';
+import Footer from '@bit/kayot88.neflify.footer.footer';
 
 export default function BrowseContainer({ slides }) {
   const [selection, setSelection] = useState('series');
@@ -27,28 +28,9 @@ export default function BrowseContainer({ slides }) {
       <Header src="joker1">
         <Header.Frame>
           <Header.Group>
-            <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
-            <Header.TextLink active={selection === 'series' ? 'true' : 'false'} onClick={() => setSelection('series')}>
-              Series
-            </Header.TextLink>
-            <Header.TextLink active={selection === 'films' ? 'true' : 'false'} onClick={() => setSelection('films')}>
-              Films
-            </Header.TextLink>
-          </Header.Group>
-          <Header.Group>
-            <Header.Search />
-            <Header.Profile onClick={() => console.log('hellooooooooooooo')}>
-              <Header.Picture src={`/images/users/${user.photoURL}.png`} />
-              <Header.Dropdown>
-                <Header.Group>
-                  <Header.Picture src={`/images/users/${user.photoURL}.png`} />
-                  <Header.TextLink>{user.displayName}</Header.TextLink>
-                </Header.Group>
-                <Header.Group>
-                  <Header.TextLink onClick={() => firebase.auth().signOut()}>Sign out</Header.TextLink>
-                </Header.Group>
-              </Header.Dropdown>
-            </Header.Profile>
+          <Header.Logo to={ROUTES.HOME} src={logo}/>
+          <Header.TextLink>Serials</Header.TextLink>
+          <Header.TextLink>Films</Header.TextLink>
           </Header.Group>
         </Header.Frame>
 
@@ -62,25 +44,7 @@ export default function BrowseContainer({ slides }) {
         </Header.Feature>
       </Header>
 
-      <Card.Group style={{ marginTop: '-150px' }}>
-        {slides[selection].map((slideItem) => (
-          <Card key={`${slideItem.title}-${slideItem.genre}`}>
-            <Card.Title>{slideItem.title}</Card.Title>
-            <Card.Entities>
-              {slideItem.data.map((item) => (
-                <Card.Item key={item.docId}>
-                  <Card.Image src={`/images/${selection}/${item.genre}/${item.slug}/small.jpg`} />
-                  <Card.Meta>
-                    <Card.SubTitle>{item.title}</Card.SubTitle>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Meta>
-                </Card.Item>
-              ))}
-            </Card.Entities>
-          </Card>
-        ))}
-      </Card.Group>
-      <FooterContainer />
+            <Footer />
     </>
   ) : (
     <>

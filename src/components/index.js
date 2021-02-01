@@ -1,5 +1,4 @@
 export { default as Accordion } from './accordion';
-export { default as Card } from './card';
 export { default as Jumbotron } from './jumbotron';
 export { default as Feature } from './feature';
 export { default as OptForm } from './opt-form';

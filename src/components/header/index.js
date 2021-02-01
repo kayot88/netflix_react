@@ -4,19 +4,16 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Link as ReachRouterLink } from 'react-router-dom';
 import {
   Container,
-  Group,
   Background,
-  Dropdown,
   Picture,
   Link,
-  Search,
-  Profile,
   FeatureCallOut,
-  SearchInput,
   ButtonLink,
   Text,
   Feature,
   Logo,
+  Group,
+  Profile,
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -26,10 +23,10 @@ export default function Header({ bg = true, children, ...restProps }) {
 Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
-
 Header.Group = function HeaderGroup({ children, ...restProps }) {
-  return <Group {...restProps}>{children}</Group>;
+  return <Container {...restProps}>{children}</Container>;
 };
+
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
   return (
@@ -39,16 +36,6 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
   );
 };
 
-Header.Search = function HeaderSearch({ ...restProps }) {
-  const [searchActive, setSearchActive] = useState(false);
-
-  return (
-    <Search {...restProps}>
-      <SearchIcon onClick={() => setSearchActive(!searchActive)} />
-      <SearchInput placeholder="Search films and series" active={searchActive} />
-    </Search>
-  );
-};
 
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
   return (
@@ -67,9 +54,6 @@ Header.Picture = function HeaderPicture({ ...restProps }) {
   return <Picture {...restProps} />;
 };
 
-Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
-  return <Dropdown {...restProps}>{children}</Dropdown>;
-};
 
 Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
   return <Link {...restProps}>{children}</Link>;
