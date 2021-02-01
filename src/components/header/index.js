@@ -14,6 +14,7 @@ import {
   Logo,
   Group,
   Profile,
+  Dropdown
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -24,9 +25,11 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 Header.Group = function HeaderGroup({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+  return <Group {...restProps}>{children}</Group>;
 };
-
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
+};
 
 Header.Logo = function HeaderLogo({ to, ...restProps }) {
   return (
@@ -36,12 +39,10 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
   );
 };
 
-
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
   return (
     <Profile {...restProps}>
       {children}
-      <ArrowDropDownIcon />
     </Profile>
   );
 };
@@ -50,16 +51,27 @@ Header.Feature = function HeaderFeature({ children, ...restProps }) {
   return <Feature>{children}</Feature>;
 };
 
-Header.Picture = function HeaderPicture({ ...restProps }) {
-  return <Picture {...restProps} />;
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+  return (
+    <Picture
+      {...restProps}
+      src={
+        src
+          ? `/images/users/${src}.png`
+          : `/images/users/1.png`
+      }
+    />
+  );
 };
-
 
 Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
   return <Link {...restProps}>{children}</Link>;
 };
 
-Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps }) {
+Header.FeatureCallOut = function HeaderFeatureCallOut({
+  children,
+  ...restProps
+}) {
   return <FeatureCallOut {...restProps}>{children}</FeatureCallOut>;
 };
 

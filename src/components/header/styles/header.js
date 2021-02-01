@@ -4,13 +4,23 @@ import { Link as ReachRouterLink } from 'react-router-dom';
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(${(props) => (props.src ? `../images/misc/${props.src}.jpg` : '../images/misc/home-bg.jpg')}) top left /
-    cover no-repeat;
-@media (max-width: 600px){
-  background: none;
-
-}
-
+  background: url(${(props) =>
+      props.src
+        ? `../images/misc/${props.src}.jpg`
+        : '../images/misc/home-bg.jpg'})
+    top left / cover no-repeat;
+  @media (max-width: 600px) {
+    background: none;
+  }
+`;
+export const Dropdown = styled.div`
+  position: absolute;
+  background-color: black;
+  padding: 10px;
+  width: 100px;
+  top: 32px;
+  right: 10px;
+  display: none;
 `;
 
 export const Container = styled.div`
@@ -23,9 +33,10 @@ export const Container = styled.div`
 `;
 
 export const Group = styled.div`
-display: flex;
-align-items:center
-`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
 
 export const Link = styled.p`
   color: #fff;
@@ -42,7 +53,6 @@ export const Link = styled.p`
     margin-right: 0;
   }
 `;
-
 
 export const ButtonLink = styled(ReachRouterLink)`
   display: block;
@@ -63,15 +73,15 @@ export const ButtonLink = styled(ReachRouterLink)`
   }
 `;
 
-export const Picture = styled.button`
-  background: url(${(props) => props.src});
+export const Picture = styled.img`
+  background: ${({ src }) => src};
   background-size: contain;
   border: 0;
   width: 32px;
   height: 32px;
   cursor: pointer;
-`;
 
+`;
 
 export const Profile = styled.div`
   display: flex;
@@ -79,8 +89,10 @@ export const Profile = styled.div`
   margin-left: 20px;
   cursor: pointer;
   position: relative;
-
   direction: column;
+  &:hover > ${Dropdown} {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
