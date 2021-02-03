@@ -13,30 +13,6 @@ export const Background = styled.div`
     background: none;
   }
 `;
-export const Dropdown = styled.div`
-  position: absolute;
-  background-color: black;
-  padding: 10px;
-  width: 100px;
-  top: 32px;
-  right: 10px;
-  display: none;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  margin: 0 3.5rem;
-  height: 4rem;
-  padding: 18px 0;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Group = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-`;
 
 export const Link = styled.p`
   color: #fff;
@@ -52,6 +28,70 @@ export const Link = styled.p`
   &:last-of-type {
     margin-right: 0;
   }
+`;
+export const Group = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+export const Picture = styled.img`
+  background: ${({ src }) => src};
+  background-size: contain;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+`;
+
+export const Dropdown = styled.div`
+  position: absolute;
+  background-color: black;
+  padding: 10px;
+  width: 100px;
+  top: 32px;
+  right: 10px;
+  display: none;
+
+  ${Group} {
+    margin-bottom: 10px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:first-of-type > ${Picture} {
+      margin-right: 10px;
+    }
+    ${Link}, ${Picture} {
+      cursor: default;
+    }
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+`;
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+  svg {
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+export const SearchIcon = styled.button``;
+export const SearchInput = styled.input``;
+
+export const Container = styled.div`
+  display: flex;
+  margin: 0 3.5rem;
+  height: 4rem;
+  padding: 18px 0;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ButtonLink = styled(ReachRouterLink)`
@@ -71,16 +111,6 @@ export const ButtonLink = styled(ReachRouterLink)`
   &:hover {
     background: #f40612;
   }
-`;
-
-export const Picture = styled.img`
-  background: ${({ src }) => src};
-  background-size: contain;
-  border: 0;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-
 `;
 
 export const Profile = styled.div`

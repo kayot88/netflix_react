@@ -8,6 +8,7 @@ import { ErrorBoundary } from '../components/errorBoundary/ErrorBoundary';
 import Footer from '@bit/kayot88.neflify.footer.footer';
 
 export default function BrowseContainer({ slides }) {
+  const [searchTerm, setSearchTerm] = useState('');
   const [selection, setSelection] = useState('series');
   const [profile, setProfile] = useState({});
   const { firebase } = useContext(FirebaseContext);
@@ -39,12 +40,18 @@ export default function BrowseContainer({ slides }) {
           </Header.Group>
           <ErrorBoundary>
             <Header.Group>
+              <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
               <Header.Profile>
                 <Header.Picture src={user.photoURL} />
                 <Header.Dropdown>
                   <Header.Group>
                     <Header.Picture src={user.photoURL} />
                     <Header.Text>{user.displayName}</Header.Text>
+                  </Header.Group>
+                  <Header.Group>
+                    <Header.TextLink onClick={() => firebase.auth().signOut()}>
+                      Sign out
+                    </Header.TextLink>
                   </Header.Group>
                 </Header.Dropdown>
               </Header.Profile>
