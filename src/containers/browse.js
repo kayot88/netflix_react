@@ -8,12 +8,16 @@ import { ErrorBoundary } from '../components/errorBoundary/ErrorBoundary';
 import Footer from '@bit/kayot88.neflify.footer.footer';
 
 export default function BrowseContainer({ slides }) {
+  const [category, setCategory] = useState('series');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selection, setSelection] = useState('series');
   const [profile, setProfile] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [slideRows, setSlideRows] = useState([]);
+  const [selection, setSelection] = useState('series');
+  
+  
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -22,6 +26,10 @@ export default function BrowseContainer({ slides }) {
       setLoading(false);
     }, 3000);
   }, [profile.displayName]);
+
+  useEffect(() => {
+    setSlideRows(slides[category]);
+  }, []);
 
   return profile.displayName ? (
     <>
@@ -35,12 +43,25 @@ export default function BrowseContainer({ slides }) {
         <Header.Frame>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} src={logo} />
-            <Header.TextLink>Serials</Header.TextLink>
-            <Header.TextLink>Films</Header.TextLink>
+            <Header.TextLink
+              active={category === 'series' ? true : false}
+              onClick={() => setCategory('series')}
+            >
+              Serials
+            </Header.TextLink>
+            <Header.TextLink
+              active={category === 'films' ? true : false}
+              onClick={() => setCategory('films')}
+            >
+              Films
+            </Header.TextLink>
           </Header.Group>
           <ErrorBoundary>
             <Header.Group>
-              <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+              <Header.Search
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+              />
               <Header.Profile>
                 <Header.Picture src={user.photoURL} />
                 <Header.Dropdown>
@@ -68,9 +89,14 @@ export default function BrowseContainer({ slides }) {
             he projects in a futile attempt to feel like he's part of the world
             around him.
           </Header.Text>
+          <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
-
+      <Card>
+        <Card.Group>
+          <Card.Title>Hello from card</Card.Title>
+        </Card.Group>
+      </Card>
       <Footer />
     </>
   ) : (

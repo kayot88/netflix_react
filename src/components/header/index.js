@@ -12,6 +12,7 @@ import {
   Text,
   Feature,
   Logo,
+  PlayButton,
   Group,
   Profile,
   Dropdown,
@@ -28,6 +29,10 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 
+Header.PlayButton = (({ children, ...restProps}) => {
+return <PlayButton {...restProps}>{children}</PlayButton>
+}  )
+
 Header.Search = function HeaderSearch({
   searchTerm,
   setSearchTerm,
@@ -39,7 +44,7 @@ Header.Search = function HeaderSearch({
       <SearchIcon
         onClick={() => setSearchActive((searchActive) => !searchActive)}
       >
-        <img src="/public/images/icons/search.png" />
+        <img src="/images/icons/search.png"  alt="Search"/>
       </SearchIcon>
       <SearchInput
         active={searchActive}
