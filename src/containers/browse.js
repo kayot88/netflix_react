@@ -14,8 +14,6 @@ export default function BrowseContainer({ slides }) {
   const [loading, setLoading] = useState(false);
   const [slideRows, setSlideRows] = useState([]);
   const [selection, setSelection] = useState('series');
-  
-  
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
 
@@ -29,7 +27,8 @@ export default function BrowseContainer({ slides }) {
 
   useEffect(() => {
     setSlideRows(slides[category]);
-  }, []);
+    console.log('slideRows', slideRows);
+  }, [slides, category]);
 
   return profile.displayName ? (
     <>
@@ -94,7 +93,33 @@ export default function BrowseContainer({ slides }) {
       </Header>
       <Card>
         <Card.Group>
-          <Card.Title>Hello from card</Card.Title>
+          {slideRows.map((slideItem) => (
+            <Card key={`${category} - ${slideItem.title.toLowerCase()}`}>
+              <Card.Title>{slideItem.title}</Card.Title>
+              <Card.Entities>
+                {slideItem.data.map((item) => {
+                  return (
+                    <Card.Item key={item.docId} item={item}>
+                      <Card.Image
+                        src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+                      />
+                      <Card.Meta>
+                        <Card.SubTitle>{item.title}</Card.SubTitle>
+                        <Card.Text>{item.description}</Card.Text>
+                      </Card.Meta>
+                    </Card.Item>
+                  );
+                })}
+              </Card.Entities>
+              <Card.Feature category={category}>
+                <p>Hello</p>
+                {/* <Player>
+                  <Play.Button/>
+                <Play.Video src='/videos/bunny.mp4'/>
+                </Player> */}
+              </Card.Feature>
+            </Card>
+          ))}
         </Card.Group>
       </Card>
       <Footer />
