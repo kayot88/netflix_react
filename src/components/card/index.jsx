@@ -57,10 +57,13 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
 };
 Card.Feature = function CardFeature({ category, children, ...restProps }) {
-  const {showFeature, setShowFeature, itemFeature} = useContext(FeatureContext);
+  const { showFeature, setShowFeature, itemFeature } = useContext(
+    FeatureContext
+  );
 
   return showFeature ? (
     <Feature
+      {...restProps}
       src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
     >
       <Content>
@@ -71,7 +74,7 @@ Card.Feature = function CardFeature({ category, children, ...restProps }) {
             setShowFeature(false);
           }}
         >
-          <img src="/image/icons/close.png" alt="Close" />
+          <img src="/images/icons/close.png" alt="Close" />
         </FeatureClose>
       </Content>
       <Group margin="30px 0" flexDirection="row" alignItems="center">
@@ -79,8 +82,9 @@ Card.Feature = function CardFeature({ category, children, ...restProps }) {
           {itemFeature.maturity < 12 ? 'PG' : itemFeature.maturity}
         </Maturity>
         <FeatureText fontWeight="bold">
-          {itemFeature.genre.charAt(0).toUpperCase() +
-          itemFeature.genre.slice(1)}
+          {itemFeature.genre +
+            itemFeature.genre.charAt(0).toUpperCase() +
+            itemFeature.genre.slice(1)}
         </FeatureText>
       </Group>
     </Feature>

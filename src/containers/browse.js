@@ -111,7 +111,10 @@ export default function BrowseContainer({ slides }) {
                   );
                 })}
               </Card.Entities>
-              <Card.Feature category={category}>
+              <Card.Feature
+                category={category}
+                // src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
+              >
                 <p>Hello</p>
                 {/* <Player>
                   <Play.Button/>
