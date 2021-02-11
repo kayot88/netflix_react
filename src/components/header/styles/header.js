@@ -191,6 +191,12 @@ export const Text = styled.p`
   font-size: 22px;
   line-height: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
+  @media (max-width: 300px) {
+   display: none;
+  }
 `;
 
 export const Logo = styled.img`
