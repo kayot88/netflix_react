@@ -1,7 +1,20 @@
 import React from 'react';
-import { Container, Inner, Pane, Title, SubTitle, Image } from './styles/jumbotron';
+import {
+  Container,
+  Inner,
+  Pane,
+  Title,
+  SubTitle,
+  Image1,
+  AnimationCard1,
+  AnimationCard2,
+} from './styles/jumbotron';
 
-export default function Jumbotron({ children, direction = 'row', ...restProps }) {
+export default function Jumbotron({
+  children,
+  direction = 'row',
+  ...restProps
+}) {
   return (
     <Container {...restProps}>
       <Inner direction={direction}>{children}</Inner>
@@ -21,6 +34,41 @@ Jumbotron.SubTitle = function JumbotronSubTitle({ children, ...restProps }) {
   return <SubTitle {...restProps}>{children}</SubTitle>;
 };
 
-Jumbotron.Image = function JumbotronImage({ ...restProps }) {
-  return <Image {...restProps} />;
+Jumbotron.Image1 = ({ children, ...restProps }) => {
+  return (
+    <div style={{position: "relative", overflow: "hidden"}}>
+      <Image1 {...restProps} />
+      <AnimationCard1>
+        <video autoPlay playsInline muted loop>
+          <source
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+            type="video/mp4"
+          ></source>
+        </video>
+      </AnimationCard1>
+    </div>
+  );
+};
+Jumbotron.Image2 = ({ children, ...restProps }) => {
+  return (
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <Image1 {...restProps} />
+      
+    </div>
+  );
+};
+Jumbotron.Image3 = ({ children, ...restProps }) => {
+  return (  
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <Image1 {...restProps} />
+      <AnimationCard2 style={{  overflow: 'hidden' }}>
+        <video autoPlay playsInline muted loop>
+          <source
+            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+            type="video/mp4"
+          ></source>
+        </video>
+      </AnimationCard2>
+    </div>
+  );
 };
