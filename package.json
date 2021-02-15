@@ -16,7 +16,7 @@
     "react-content-loader": "^5.0.4",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^4.0.2",
     "styled-components": "^5.1.0"
   },
   "peerDependencies": {
@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll",
+    "test": "react-scripts test --coverage --watchAll ",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -43,8 +43,10 @@
     ]
   },
   "jest": {
+
+    
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.js",
+      "<rootDir>/src/**/*.{js,jsx}",
       "!<rootDir>/src/app.js",
       "!<rootDir>/src/helpers/routes.js",
       "!<rootDir>/src/lib/firebase.js",
