@@ -1,12 +1,5 @@
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-
-import {
-  render,
-  fireEvent,
-  screen,
-  getByText,
-  queryByText,
-} from '@testing-library/react';
 import { Player } from '../../components/player/index.jsx';
 
 describe('<Player/>', () => {
@@ -21,11 +14,11 @@ describe('<Player/>', () => {
 
     fireEvent.click(screen.getByText('Play'));
     expect(queryByTestId('player')).toBeTruthy();
-  
+
     screen.getByRole('close');
     fireEvent.click(screen.getByRole('close'));
     expect(queryByTestId('player')).toBeFalsy();
-      
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });
