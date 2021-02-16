@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/>  should rendered with correct info 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 70px 45px;
+  margin: auto;
+  max-width: 1000px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  color: #757575;
+  margin-bottom: 20px;
+  font-size: 13px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1 {
+  font-size: 1rem;
+  color: #757575;
+  margin-bottom: 40px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.c6 {
+  font-size: 0.8125rem;
+  color: #757575;
+  margin-bottom: 40px;
+  margin-left: 72px;
+  margin-right: 72px;
+}
+
+.c2 {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 0;
+}
+
+<div
+  class="c0"
+>
+  <p
+    class="c1"
+    role="title"
+  >
+    Questions? Contact us.
+  </p>
+  <div
+    class="c2"
+  />
+  <div
+    class="c3"
+  >
+    <div
+      class="c4"
+    >
+      <a
+        class="c5"
+        data-testid="FAQ"
+        href="/"
+      >
+        FAQ
+      </a>
+      <a
+        class="c5"
+        data-testid="Investor"
+        href="/"
+      >
+        Investor Relations
+      </a>
+      <a
+        class="c5"
+        data-testid="Ways"
+        href="/"
+      >
+        Ways to Watch
+      </a>
+      <a
+        class="c5"
+        data-testid="Corporate"
+        href="/"
+      >
+        Corporate Information
+      </a>
+      <a
+        class="c5"
+        data-testid="Netflix"
+        href="/"
+      >
+        Netflix Originals
+      </a>
+    </div>
+    <div
+      class="c4"
+    >
+      <a
+        class="c5"
+        href="#"
+      >
+        Help Centre
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Jobs
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Terms of Use
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Contact Us
+      </a>
+    </div>
+    <div
+      class="c4"
+    >
+      <a
+        class="c5"
+        href="#"
+      >
+        Account
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Redeem gift cards
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Privacy
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Speed Test
+      </a>
+    </div>
+    <div
+      class="c4"
+    >
+      <a
+        class="c5"
+        href="#"
+      >
+        Media Centre
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Buy gift cards
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Cookie Preferences
+      </a>
+      <a
+        class="c5"
+        href="#"
+      >
+        Legal Notices
+      </a>
+    </div>
+  </div>
+  <div
+    class="c2"
+  />
+  <p
+    class="c6"
+  >
+    Netflix United Kingdom
+  </p>
+</div>
+`;
