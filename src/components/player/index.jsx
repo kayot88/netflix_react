@@ -5,25 +5,25 @@ import { Button, Close, Container, Inner, Overlay } from './styles/player';
 
 export const PlayerContext = createContext();
 
-export const Player = ({ children, ...restProps }) => {
+export default function Player({ children, ...restProps }) {
   const [showPlayer, setShowPlayer] = useState(false);
   return (
     <PlayerContext.Provider value={{ showPlayer, setShowPlayer }}>
       <Container {...restProps}>{children}</Container>
     </PlayerContext.Provider>
   );
-};
+}
 
 Player.Video = function PlayerVideo({ src, ...restProps }) {
   const { showPlayer, setShowPlayer } = useContext(PlayerContext);
   return showPlayer
     ? ReactDOM.createPortal(
         <Overlay {...restProps} data-testid="player">
-          <Inner >
+          <Inner>
             <video id="netflix-player" controls>
               <source src={src} type="video/mp4" />
             </video>
-            <Close role='close' onClick={() => setShowPlayer(false)} />
+            <Close role="close" onClick={() => setShowPlayer(false)} />
           </Inner>
         </Overlay>,
         document.body
@@ -39,5 +39,3 @@ Player.Button = function PlayerButton({ ...restProps }) {
     </Button>
   );
 };
-
-

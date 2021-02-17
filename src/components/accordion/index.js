@@ -1,13 +1,22 @@
 import React, { useState, useContext, createContext } from 'react';
 import AddIcon from '@material-ui/icons/Add';
-import { Container, Frame, Title, Item, Inner, Header, Body } from './styles/accordion';
+  import {
+    Container,
+    Frame,
+    Title,
+    Item,
+    Inner,
+    Header,
+    Body,
+  } from './styles/accordion';
+
 
 export const ToggleContext = createContext();
 
 export default function Accordion({ children, ...restProps }) {
   return (
     <Container {...restProps}>
-      <Inner>{children}</Inner>
+        <Inner>{children}</Inner>
     </Container>
   );
 }
@@ -44,7 +53,5 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
 Accordion.Body = function AccordionBody({ children, ...restProps }) {
   const { toggleShow } = useContext(ToggleContext);
 
-  return toggleShow ? (
-    <Body {...restProps}>{children}</Body>
-  ) : null
+  return toggleShow ? <Body {...restProps}>{children}</Body> : null;
 };

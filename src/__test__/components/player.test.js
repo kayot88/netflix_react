@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { Player } from '../../components/player/index.jsx';
+import { Player } from '../../components';
 
 describe('<Player/>', () => {
   it('Player rendered with the bunny video', () => {
