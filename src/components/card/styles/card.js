@@ -198,3 +198,4 @@ export const Maturity = styled.div`
   margin-top: 10px;
 
 `;
+

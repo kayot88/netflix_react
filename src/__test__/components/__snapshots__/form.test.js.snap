@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form/> form with an error  1`] = `undefined`;
+
+exports[`<Form/> should render form with passing text  1`] = `
+<div
+  class="sc-bdfBwQ gFJsfN"
+>
+  <h1
+    class="sc-hKgILt gPncSF"
+  >
+    Sign In
+  </h1>
+  <form
+    class="sc-dlfnbm gsUiWl"
+    method="POST"
+  >
+    <input
+      class="sc-iBPRYJ hfOyNP"
+      placeholder="Email address"
+    />
+    <input
+      class="sc-iBPRYJ hfOyNP"
+      placeholder="Password"
+      type="password"
+    />
+    <button
+      class="sc-fubCfw fXpolG"
+      disabled=""
+      type="submit"
+    >
+      SignIn
+    </button>
+  </form>
+  <h1
+    class="sc-eCssSg fhMwce"
+  >
+    New to Netflix? 
+  </h1>
+  <h1
+    class="sc-jSgupP cjRwrH"
+  >
+    This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.
+  </h1>
+</div>
+`;
